@@ -37,3 +37,24 @@ function isEven2 (str) {
 console.log(isEven2("xoxooooooxoxxo"));
 console.log(isEven2("xoxoxoxo"));
 
+function isEven3(str) {
+    var exes = 0;
+    var ohs = 0;
+
+    str.split('').map(function(el) {
+        if (el === 'x') {
+            exes += 1;
+        } else {
+            ohs += 1;
+        }
+    });
+    return (!(exes%2) && !(ohs%2));
+};
+
+console.log(isEven3("xoxooooooxoxxo"));
+console.log(isEven3("xoxoxoxo"));
+
+
+
+
+
