@@ -11,11 +11,7 @@ function isEven (str) {
         }
     }
 
-    if (exes.length === ohs.length) {
-        return true;
-    } else {
-        return false;
-    }
+    return (exes.length === ohs.length);
 }
 
 console.log(isEven("xoxoooooxoxxo"));
@@ -35,12 +31,7 @@ function isEven2 (str) {
             ohs.push(str[i]);
         }
     }
-
-    if (exes.length%2 === 0 && ohs.length%2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return (exes.length%2 === 0 && ohs.length%2 === 0)
 }
 
 console.log(isEven2("xoxooooooxoxxo"));
