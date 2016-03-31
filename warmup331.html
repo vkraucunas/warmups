@@ -1,0 +1,31 @@
+<!--
+Exercise 1: Add your own property and access it in the view. Eg. Have first and last name input boxes that are used to have a perzonalized greeting. "Hello, fname lname".
+Exercise 2: Use ng-model with a dropdown menu (select tag). Give the user the following four items to pick from - "Hello", "Greetings", "Salutations", "Live long and prosper". Display the user's choice instead of "Hello" in exercise 1. For example, if the user selects "Salutations", the line should say (for example) "Salutations, Roger Schmidt".
+Exercise 3: Research and use ng-init to set a default greeting from the dropdown in Exercise 2. -->
+ <!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Today's Warmup</title>
+</head>
+<body>
+    <h1>Greetings</h1>
+    <input type="text"
+            ng-model="fname"
+            placeholder="First Name">
+    <input type="text"
+            ng-model="lname"
+            placeholder="Last Name">
+
+    <select ng-model="greeting"
+            ng-init="greeting='Hey'">
+        <option value="Hello,">Hello</option>
+        <option value="Greetings,">Greetings</option>
+        <option value="Salutations,">Salutations</option>
+        <option value="Live long and prosper,">Live Long and Prosper</option>
+    </select>
+
+    <h3 style="color: red;">{{greeting}} {{fname}} {{lname}}.</h3>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+</html>
