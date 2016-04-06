@@ -7,14 +7,19 @@ app.controller('pokeControl', function($scope, $http) {
     $scope.waiting2 = false;
     $scope.pokeName = '';
     $scope.move = '';
+    $scope.pokeImg = '';
+    $scope.imgShow = false;
 
     $scope.makePoke = function() {
         $scope.waiting1 = true;
         return $http.get("http://pokeapi.co/api/v2/pokemon/"+pokeNum+"/")
          .then(function(data) {
             data = data.data;
+            console.log(data);
             $scope.waiting1 = false;
+            $scope.imgShow = true;
             $scope.pokeName = data.name;
+            $scope.pokeImg = data.sprites.front_default;
          })
     }
 
