@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="pokeApp">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <meta charset="UTF-8">
+    <title>Poke Stuff</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+        img {
+            height: 150px;
+            width: 200px;
+        }
+        #pokeImg {
+
+        }
+    </style>
+</head>
+<body ng-controller="pokeControl">
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h1>Random Poke Generator</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+
+<!-- left column -->
+            <div class="one-half column">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h3>Get a Random Pokemon</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <button ng-click="makePoke()">
+                            Generate
+                        </button>
+                    </div>
+                </div>
+                <div class="row"
+                     ng-show="waiting1 === true">
+                    <div class="twelve columns">
+                        <img src="http://downgraf.com/wp-content/uploads/2014/09/01-progress.gif" alt="loading gif">
+                    </div>
+                </div>
+                <div class="row"
+                     ng-show="waiting1 === false">
+                    <div class="twelve columns">
+                        <h5>{{pokeName | noDash}}</h5>
+                    </div>
+                </div>
+            </div>
+
+<!-- right column -->
+            <div class="one-half column">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h3>Get a Random Move</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <button ng-click="makeMove()">
+                            Generate
+                        </button>
+                    </div>
+                </div>
+                <div class="row"
+                     ng-show="waiting2 === true">
+                    <div class="twelve columns">
+                        <img src="http://downgraf.com/wp-content/uploads/2014/09/01-progress.gif" alt="loading gif">
+                    </div>
+                </div>
+                <div class="row"
+                     ng-show="waiting2 === false">
+                    <div class="twelve columns">
+                        <h5>{{move | noDash}}</h5>
+                    </div>
+                </div>
+            </div>
+<!-- lower row closer -->
+        </div>
+<!-- container div closer -->
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
+</body>
+</html>
