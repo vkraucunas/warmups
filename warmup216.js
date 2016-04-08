@@ -10,7 +10,6 @@ function isEven (str) {
             ohs.push(str[i]);
         }
     }
-
     return (exes.length === ohs.length);
 }
 
